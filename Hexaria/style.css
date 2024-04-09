@@ -1,0 +1,188 @@
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    text-align: center;
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Game Instructions */
+.instructions {
+    margin-top: 20px;
+}
+
+.instructions h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.instructions p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Options */
+.options {
+    margin-top: 20px;
+}
+
+.options label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.options input[type="text"],
+.options select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.options button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.options button:hover {
+    background-color: #0056b3;
+}
+
+/* Game Board */
+.game-board {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.hexagon {
+    width: 60px;
+    height: 34.64px;
+    background-color: #ccc;
+    position: relative;
+    margin: 5px;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.hexagon:hover {
+    transform: scale(1.1);
+}
+
+/* Players */
+.players {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.player {
+    text-align: center;
+    flex: 1;
+}
+
+.player-name {
+    font-size: 18px;
+    color: #333;
+}
+
+.player-score {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Current Hexagon */
+.current-hexagon {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.current-hexagon .label {
+    font-size: 18px;
+    color: #333;
+}
+
+.current-hexagon .hexagon {
+    width: 100px;
+    height: 57.74px;
+    background-color: #ccc;
+    margin-top: 10px;
+}
+
+/* New Game Button */
+#newGameButton {
+    display: block;
+    margin: 20px auto;
+    width: 150px;
+    padding: 10px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#newGameButton:hover {
+    background-color: #218838;
+}
+
+/* Sort Button */
+#sortButton {
+    margin-bottom: 10px;
+}
+
+/* Leaderboard */
+.leaderboard {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.leaderboard h2 {
+    margin-bottom: 10px;
+}
+
+.leaderboard button {
+    margin-bottom: 10px;
+}
+
+#leaderboardList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#leaderboardList li {
+    margin-bottom: 5px;
+}
