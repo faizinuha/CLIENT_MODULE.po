@@ -7,6 +7,9 @@ body {
 }
 
 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     max-width: 800px;
     margin: 0 auto;
     background-color: #fff;
@@ -115,6 +118,7 @@ body {
 .player-name {
     font-size: 18px;
     color: #333;
+    margin-top: 10px; /* Tambahkan margin-top agar nama pemain di bawah kotak */
 }
 
 .player-score {
@@ -166,8 +170,11 @@ body {
 
 /* Leaderboard */
 .leaderboard {
-    text-align: center;
+    text-align: left; /* Atur agar konten leaderboard rata kiri */
     margin-top: 20px;
+    flex: 1; /* Agar leaderboard mengisi sisa ruang vertikal */
+    padding-left: 20px; /* Tambahkan padding kiri */
+    border-left: 1px solid #ccc; /* Tambahkan garis pemisah antara leaderboard dan konten lainnya */
 }
 
 .leaderboard h2 {
@@ -185,4 +192,22 @@ body {
 
 #leaderboardList li {
     margin-bottom: 5px;
+}
+
+/* Tambahkan gaya untuk warna pemain (pink) */
+#player1Name {
+    color: pink;
+}
+
+/* Tambahkan gaya untuk warna bot (biru) */
+#player2Name {
+    color: blue;
+}
+
+hr {
+    margin-top: 20px; /* Tambahkan margin atas */
+    width: 100%; /* Agar garis horizontal mencakup seluruh lebar container */
+    border: 0; /* Hapus border */
+    height: 1px; /* Tentukan tinggi garis */
+    background-color: #ccc; /* Warna garis */
 }

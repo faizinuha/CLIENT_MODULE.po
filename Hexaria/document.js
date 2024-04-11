@@ -3,10 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('welcomeScreen').style.display = 'block';
   document.getElementById('gameScreen').style.display = 'none';
 
-  // Variables to store player names
-  let player1Name = '';
-  let player2Name = '';
-
   // Add event listener for start game button
   document.getElementById('startGameButton').addEventListener('click', function() {
       // Get player name, opponent type, and level selection
@@ -20,15 +16,11 @@ document.addEventListener('DOMContentLoaded', function() {
           return;
       }
 
-      // Save player names
-      player1Name = playerName;
-      player2Name = opponentType === 'bot' ? 'Bot' : document.getElementById('player2Name').value;
-
       // Start the game
       if (opponentType === 'bot') {
-        startGameWithBot(player1Name, level);
+        startGameWithBot(playerName, level);
       } else {
-        startGame(player1Name, opponentType, level);
+        startGame(playerName, opponentType, level);
       }
   });
 
@@ -67,9 +59,9 @@ document.addEventListener('DOMContentLoaded', function() {
       // Start new game based on opponent type
       const opponentType = document.getElementById('opponentType').value;
       if (opponentType === 'bot') {
-        startGameWithBot(player1Name, 'medium');
+        startGameWithBot('', 'medium');
       } else {
-        startGame(player1Name, 'player', 'medium');
+        startGame('', 'player', 'medium');
       }
   });
 
@@ -96,7 +88,7 @@ function startGame(playerName, opponentType, level) {
 
   // Set player names
   document.getElementById('player1Name').textContent = playerName;
-  document.getElementById('player2Name').textContent = player2Name;
+  document.getElementById('player2Name').textContent = document.getElementById('player2NameInput').value;
 
   // Set current player
   currentPlayer = 1; // Player 1 starts the game
@@ -141,63 +133,6 @@ function startGame(playerName, opponentType, level) {
   // Additional game initialization logic can be added here
   console.log('Game started with player:', playerName, 'Opponent:', opponentType, 'Level:', level);
 }
-
-// Function to start the game with a bot
-function startGameWithBot(playerName, level) {
-  // Hide welcome screen and display game screen
-  document.getElementById('welcomeScreen').style.display = 'none';
-  document.getElementById('gameScreen').style.display = 'block';
-
-  // Set player names
-  document.getElementById('player1Name').textContent = playerName;
-  document.getElementById('player2Name').textContent = 'Bot';
-
-  // Set current player
-  currentPlayer = 1; // Player 1 starts the game
-
-  // Generate initial hexagons for the game board
-  generateHexagons(10, 8);
-
-  // Add event listener for hexagon clicks
-  const hexagons = document.querySelectorAll('.hexagon');
-  hexagons.forEach(hexagon => {
-      hexagon.addEventListener('click', function() {
-          if (this.style.backgroundColor !== 'black') {
-              return; // Ignore if hexagon is not black
-          }
-
-          // Change color of the clicked hexagon to random color
-          const color = getRandomColor();
-          this.style.backgroundColor = color;
-
-          // Update player score and turn
-          player1Score++;
-          document.getElementById('player1Score').textContent = player1Score;
-
-          // Switch to the next player
-          currentPlayer = 2; // Bot's turn
-
-          // Update turn display
-          document.getElementById('playerTurn').textContent = "Bot's Turn";
-
-          // Simulate bot's move after a short delay (simulate thinking time)
-          setTimeout(() => {
-              makeBotMove(level);
-          }, 1000); // Adjust the delay time as needed
-
-          // Check if game is over
-          if (isGameOver()) {
-              endGame();
-          }
-      });
-  });
-
-  // Additional game initialization logic can be added here
-  console.log('Game started with player:', playerName, 'Opponent: Bot', 'Level:', level);
-}
-
-// Rest of the code remains the same
-
 
 // Function to start the game with a bot
 function startGameWithBot(playerName, level) {

@@ -1,0 +1,40 @@
+body {
+	background: #333333;
+	margin: 0;
+}
+
+.tiles {
+	margin: 48px auto;
+	width: max-content;
+	display: grid;
+	grid-template-columns: repeat(4, 100px);
+	gap: 16px;
+	box-sizing: border-box;
+}
+
+.tile {
+	height: 100px;
+	background: #111111;
+	border: 5px solid #444444;
+	cursor: pointer;
+}
+h1{
+  text-align: center;
+  color: #040a5c;
+ 
+}
+
+.val{
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  background-color: #040a5c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+val:hover {
+  background-color: #02327a;
+}
