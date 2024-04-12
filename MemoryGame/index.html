@@ -1,68 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Memory Game</title>
-  <link rel="icon" href="../memory.png">
-</head>
-<body>
-  <style>
-    body {
-    background-image:url(as.jpg);
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Game</title>
+    <link rel="icon" href="../memory.png" />
+  </head>
+  <body>
+    <style>
+      body {
+        background-image: url(as.jpg);
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
 
-.container {
-  text-align: center;
-}
+      .container {
+        text-align: center;
+      }
 
-h1 {
-  font-size: 2.5rem;
-  color: #040a5c;
-  background-color: aqua;
-  border-radius: 25px;
-  padding: 20px;
-  margin-bottom: 20px;
-  transition: background-color 0.3s ease;
-}
+      h1 {
+        font-size: 2.5rem;
+        color: #040a5c;
+        background-color: aqua;
+        border-radius: 25px;
+        padding: 20px;
+        margin-bottom: 20px;
+        transition: background-color 0.3s ease;
+      }
 
-h1:hover {
-  background-color: lightblue;
-}
+      h1:hover {
+        background-color: lightblue;
+      }
 
-button {
-  font-size: 1.2rem;
-  padding: 10px 20px;
-  background-color: #040a5c;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+      button {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+        background-color: #040a5c;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
 
-button:hover {
-  background-color: #02327a;
-}
-
-  </style>
-  <div class="container">
-    <h1>Welcome To Memory Game</h1>
-    <hr>
-    <button type="submit" onclick="validate()">Start Game</button>
-  </div>
-  <script>
-    function validate() {
-      window.location.href = 'game/index.html';
-    }
-  </script>
-  
-</body>
+      button:hover {
+        background-color: #02327a;
+      }
+    </style>
+    <div class="container">
+      <h1>Welcome To Memory Game</h1>
+      <hr />
+      <button type="submit" onclick="validate()">Start Game</button>
+    </div>
+    <script>
+      function validate() {
+        window.location.href = "game/index.html";
+      }
+    </script>
+  </body>
 </html>
