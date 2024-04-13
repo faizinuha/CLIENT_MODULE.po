@@ -35,4 +35,4 @@ Jika Anda ingin berkontribusi pada pengembangan Hexaria, berikut adalah langkah-
 Hexaria dilisensikan di bawah [MIT License](LICENSE).
 
 ---
-© 2024 Hexaria. Dikembangkan oleh [Faizinuha](https://github.com/username).
+© 2024 Hexaria. Dikembangkan oleh [Faizinuha](https://github.com/faizinuha).

@@ -34,4 +34,4 @@ Jika Anda ingin berkontribusi pada pengembangan permainan ini, berikut adalah la
 Permainan ini dilisensikan di bawah [MIT License](LICENSE).
 
 ---
-© 2024 Memory Card Game. Dikembangkan oleh [Nama Anda](https://github.com/username).
+© 2024 Memory Card Game. Dikembangkan oleh [Faizinuha](https://github.com/faizinuha).
