@@ -1,7 +1,8 @@
 /* Global Styles */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration:aqua;
+    background-image: url(../MemoryGame/as.jpg);
     padding: 20px;
     background-color: #f8f9fa;
 }
@@ -107,6 +108,7 @@ body {
 .players {
     display: flex;
     justify-content: space-between;
+    text-align: center;
     margin-top: 20px;
 }
 
@@ -116,7 +118,7 @@ body {
 }
 
 .player-name {
-    font-size: 18px;
+    font-size: 20px;
     color: #333;
     margin-top: 10px; /* Tambahkan margin-top agar nama pemain di bawah kotak */
 }
@@ -164,11 +166,15 @@ body {
 }
 
 /* Sort Button */
+/* Sort Button */
 #sortButton {
-    position: relative;
+    position: absolute; /* Jadikan posisi absolut */
+    top: 100px; /* Geser ke bagian atas */
+    right: 20px; /* Geser ke kanan */
     text-align: center;
-    margin: 10px 0;
-    margin-bottom: 10px;
+    border-bottom: 2px solid slateblue;
+    color: #007bff;
+    font-weight: lighter;
 }
 
 /* Leaderboard */
@@ -178,6 +184,13 @@ body {
     flex: 1; /* Agar leaderboard mengisi sisa ruang vertikal */
     padding-left: 20px; /* Tambahkan padding kiri */
     border-left: 1px solid #ccc; /* Tambahkan garis pemisah antara leaderboard dan konten lainnya */
+    border-top: 1px solid #ccc; /* Tambahkan border atas */
+    border-right: 1px solid #ccc; /* Tambahkan border kanan */
+    border-bottom: 1px solid #ccc; /* Tambahkan border bawah */
+    border-radius: 0 0 10px 10px; /* Tambahkan radius border di sudut kiri bawah dan kanan bawah */
+    background-color: #f8f9fa; /* Warna latar belakang */
+    padding: 20px; /* Atur padding */
+    overflow-y: auto; /* Aktifkan overflow jika konten melebihi ketinggian container */
 }
 
 .leaderboard h2 {

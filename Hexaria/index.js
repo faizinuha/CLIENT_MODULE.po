@@ -33,22 +33,24 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Event listener for opponent type select
-  document.getElementById('opponentType').addEventListener('change', function() {
-      const opponentType = this.value;
-      const playerNameInput = document.getElementById('playerName');
-      const player2NameInput = document.getElementById('player2NameInput');
+// Event listener for opponent type select
+document.getElementById('opponentType').addEventListener('change', function() {
+  const opponentType = this.value;
+  const playerNameInput = document.getElementById('playerName');
+  const player2NameInput = document.getElementById('player2NameInput');
 
-      if (opponentType === 'bot') {
-          // If opponent is bot, disable player name input and hide player 2 name input
-          playerNameInput.value = '';
-          playerNameInput.disabled = true;
-          player2NameInput.style.display = 'none';
-      } else {
-          // If opponent is player, enable player name input and show player 2 name input
-          playerNameInput.disabled = false;
-          player2NameInput.style.display = 'block';
-      }
-  });
+  if (opponentType === 'bot') {
+      // If opponent is bot, hide player 2 name input and reset its value
+      playerNameInput.disabled = false;
+      playerNameInput.value = '';
+      player2NameInput.style.display = 'none';
+  } else {
+      // If opponent is player, enable player name input and show player 2 name input
+      playerNameInput.disabled = true;
+      player2NameInput.style.display = 'block';
+  }
+});
+
 
   // Event listener for new game button
   document.getElementById('newGameButton').addEventListener('click', function() {
