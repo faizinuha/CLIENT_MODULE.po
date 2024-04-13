@@ -25,9 +25,14 @@ h1 {
 	color: #040a5c;
 }
 
-.val {
-	position: relative;
+.val-container {
+	text-align: center; /* Menempatkan tombol di tengah secara horizontal */
 	margin: 20px auto; /* Margin atas dan bawah auto untuk perataan horizontal */
+	display: flex; /* Menggunakan flexbox */
+	align-items: center; /* Menempatkan tombol di tengah secara vertikal */
+}
+
+.val {
 	width: min(90vw, 300px); /* Lebar maksimal 90% dari lebar layar atau 300px */
 	font-size: 1.2rem;
 	padding: 10px 20px;

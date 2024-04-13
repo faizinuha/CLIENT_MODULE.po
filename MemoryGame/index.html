@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memory Game</title>
-    <link rel="icon" href="../memory.png" />
-  </head>
-  <body>
+    <link rel="icon" href="../memory.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
     <style>
       body {
         background-image: url(as.jpg);
@@ -53,14 +54,26 @@
       }
     </style>
     <div class="container">
-      <h1>Welcome To Memory Game</h1>
-      <hr />
-      <button type="submit" onclick="validate()">Start Game</button>
+        <h1>Welcome To Memory Game</h1>
+        <hr />
+        <label for="gameMode">Choose game mode:</label>
+        <select id="gameMode">
+            <option value="emoji">Emoji</option>
+            <option value="color">Colors</option>
+        </select>
+        <button onclick="startGame()">Start Game</button>
     </div>
+    <script src="index.js" defer></script>
     <script>
-      function validate() {
-        window.location.href = "game/index.html";
+      function startGame() {
+        var mode = document.getElementById('gameMode').value;
+        if(mode === 'emoji'){
+          window.location.href = "game/emoji.html"; // Perbaiki ekstensi file
+        }else if(mode === 'color'){
+          window.location.href = "game/warna.html"; // Perbaiki ekstensi file
+        }
       }
     </script>
-  </body>
+
+</body>
 </html>
