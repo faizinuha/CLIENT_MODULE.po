@@ -4,7 +4,7 @@ let level = 1;
 function startGame(level) {
   let tileCount;
   let additionalBlocks;
-  let additionalColors = []; // Menyimpan emoji tambahan untuk blok tambahan
+  let additionalEmojis = []; // Menyimpan emoji tambahan untuk blok tambahan
 
   if (level === 1) {
     tileCount = 16;
@@ -12,15 +12,15 @@ function startGame(level) {
   } else if (level === 2) {
     tileCount = 18;
     additionalBlocks = 2; // Dua blok tambahan di level 2
-    additionalColors = ["🍎", "🥦"]; // Emoji tambahan untuk level 2
+    additionalEmojis = ["🍎", "🥦"]; // Emoji tambahan untuk level 2
   } else if (level === 3) {
     tileCount = 20;
     additionalBlocks = 4; // Empat blok tambahan di level 3
-    additionalColors = ["🍋", "🍊", "🍇", "💖"]; // Emoji tambahan untuk level 3
+    additionalEmojis = ["🍋", "🍊", "🍇", "💖"]; // Emoji tambahan untuk level 3
   } else if (level === 4) {
     tileCount = 25;
     additionalBlocks = 9; // Sembilan blok tambahan di level 4
-    additionalColors = [
+    additionalEmojis = [
       "🍎",
       "🌑",
       "🏖️",
@@ -34,7 +34,7 @@ function startGame(level) {
   } else if (level === 5) {
     tileCount = 30;
     additionalBlocks = 15; // Empat belas blok tambahan di level 5
-    additionalColors = [
+    additionalEmojis = [
         "🔵",
         "🟣",
         "🟢",
@@ -73,8 +73,8 @@ function startGame(level) {
   let emojisPicklist = [...emojis, ...emojis];
 
   // Tambahkan emoji tambahan untuk blok tambahan
-  for (let i = 0; i < additionalColors.length; i++) {
-    emojisPicklist.push(additionalColors[i]);
+  for (let i = 0; i < additionalEmojis.length; i++) {
+    emojisPicklist.push(additionalEmojis[i]);
   }
 
   // Game state
@@ -97,7 +97,7 @@ function startGame(level) {
       }
 
       // Reveal this emoji
-      element.innerHTML = emoji;
+      element.textContent = emoji;
 
       if (!activeTile) {
         activeTile = element;
@@ -127,8 +127,8 @@ function startGame(level) {
       awaitingEndOfMove = true;
 
       setTimeout(() => {
-        activeTile.innerHTML = '';
-        element.innerHTML = '';
+        activeTile.textContent = '';
+        element.textContent = '';
 
         awaitingEndOfMove = false;
         activeTile = null;
@@ -160,5 +160,5 @@ function startGame(level) {
   newBlockFunction();
 }
 
-// Mulai permainan dengan level 1-6
+// Mulai permainan dengan level 4
 startGame(level);

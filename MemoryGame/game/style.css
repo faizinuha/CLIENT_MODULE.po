@@ -1,13 +1,14 @@
 body {
-	background-image:url(../as.jpg);
+	background-image: url(../as.jpg);
 	margin: 0;
+	padding: 0; /* Pastikan padding juga diatur ke 0 */
 }
 
 .tiles {
 	margin: 48px auto;
-	width: max-content;
+	width: min(90vw, 600px); /* Lebar maksimal 90% dari lebar layar atau 600px */
 	display: grid;
-	grid-template-columns: repeat(4, 100px);
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Menyesuaikan jumlah kolom dengan ukuran layar */
 	gap: 16px;
 	box-sizing: border-box;
 }
@@ -18,27 +19,38 @@ body {
 	border: 5px solid #444444;
 	cursor: pointer;
 }
-h1{
-  text-align: center;
-  color: #040a5c;
- 
+
+h1 {
+	text-align: center;
+	color: #040a5c;
 }
 
-.val{
+.val {
 	position: relative;
-	top: 600px;
-	margin: 100vh;
-  font-size: 1.2rem;
-  padding: 10px 20px;
-  background-color: #040a5c;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+	margin: 20px auto; /* Margin atas dan bawah auto untuk perataan horizontal */
+	width: min(90vw, 300px); /* Lebar maksimal 90% dari lebar layar atau 300px */
+	font-size: 1.2rem;
+	padding: 10px 20px;
+	background-color: #040a5c;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
 }
 
-val:hover {
+.val:hover {
+	background-color: #02327a;
+}
 
-  background-color: #02327a;
+/* Media query untuk perangkat seluler */
+@media only screen and (max-width: 600px) {
+	.tiles {
+			width: 90%; /* Lebar untuk perangkat seluler */
+			grid-template-columns: repeat(2, minmax(100px, 1fr)); /* Menyesuaikan jumlah kolom untuk perangkat seluler */
+	}
+
+	.val {
+			width: 90%; /* Lebar untuk perangkat seluler */
+	}
 }
