@@ -3,16 +3,19 @@ let cards = [];
 let firstCard, secondCard;
 let lockBoard = false;
 let score = 0;
+let level = 1;
 
 document.querySelector(".score").textContent = score;
 
-fetch("asset/cards.json")
-  .then((res) => res.json())
-  .then((data) => {
-    cards = [...data, ...data];
-    shuffleCards();
-    generateCards();
-  });
+function startGame(level) {
+  fetch(`asset/cards_level${level}.json`)
+    .then((res) => res.json())
+    .then((data) => {
+      cards = [...data, ...data];
+      shuffleCards();
+      generateCards();
+    });
+}
 
 function shuffleCards() {
   let currentIndex = cards.length,
@@ -33,15 +36,16 @@ function generateCards() {
     cardElement.classList.add("card");
     cardElement.setAttribute("data-name", card.name);
     cardElement.innerHTML = `
-    <div class="front">
-      <img class="front-image" src="${card.image}" /> <!-- Perhatikan tanda kutip di sekitar ${card.image} -->
-    </div>
-    <div class="back"></div>
-  `;
+      <div class="front">
+        <img class="front-image" src="${card.image}" />
+      </div>
+      <div class="back"></div>
+    `;
     gridContainer.appendChild(cardElement);
     cardElement.addEventListener("click", flipCard);
   }
 }
+
 function flipCard() {
   if (lockBoard) return;
   if (this === firstCard) return;
@@ -94,5 +98,7 @@ function restart() {
   score = 0;
   document.querySelector(".score").textContent = score;
   gridContainer.innerHTML = "";
-  generateCards();
+  startGame(level);
 }
+
+startGame(level);
