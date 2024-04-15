@@ -83,3 +83,14 @@ p {
 .card .front {
   transform: rotateY(180deg);
 }
+.eleemt {
+  background-color: #27ae60;
+  border-radius: 15px;
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  text-align: center;
+  font-size: medium;
+}
