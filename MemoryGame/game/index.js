@@ -1,5 +1,6 @@
 const tilesContainer = document.querySelector(".tiles");
 let level = 1;
+let timer;
 
 function startGame(level) {
   let tileCount;
@@ -35,32 +36,31 @@ function startGame(level) {
     tileCount = 30;
     additionalBlocks = 15; // Empat belas blok tambahan di level 5
     additionalColors = [
-        "cyan",
-        "magenta",
-        "lime",
-        "indigo",
-        "coral",
-        "silver",
-        "maroon",
-        "olive",
-        "orchid",
-        "sienna",
-        "skyblue",
-        "peru",
-        "salmon",
-        "slateblue"
+      "cyan",
+      "magenta",
+      "lime",
+      "indigo",
+      "coral",
+      "silver",
+      "maroon",
+      "olive",
+      "orchid",
+      "sienna",
+      "skyblue",
+      "peru",
+      "salmon",
+      "slateblue",
     ];
-
-} else if(level === 6){
-    alert('Selamat! Anda menyelesaikan level 6!');
+  } else if (level === 6) {
+    alert("Selamat! Anda menyelesaikan level 6!");
     // Kembali ke halaman utama setelah menyelesaikan level 5
-    window.location.href = '../index.html'; // Ganti 'home.html' dengan URL halaman utama Anda
+    window.location.href = "../index.html"; // Ganti 'home.html' dengan URL halaman utama Anda
     return; // Menghentikan eksekusi fungsi startGame setelah menyelesaikan level 5
-} else {
-  tileCount = 25;
-  additionalBlocks = 0; // Default to no additional blocks for levels beyond 4
-}
-    
+  } else {
+    tileCount = 25;
+    additionalBlocks = 0; // Default to no additional blocks for levels beyond 4
+  }
+
   const colors = [
     "aqua",
     "aquamarine",
@@ -160,6 +160,15 @@ function startGame(level) {
   // Panggil fungsi blok baru
   newBlockFunction();
 }
-
 // Mulai permainan dengan level 4
 startGame(level);
+// Timer
+window.setTimeout("waktu()", 1000);
+ 
+	function waktu() {
+		var waktu = new Date();
+		setTimeout("waktu()", 1000);
+		document.getElementById("jam").innerHTML = waktu.getHours();
+		document.getElementById("menit").innerHTML = waktu.getMinutes();
+		document.getElementById("detik").innerHTML = waktu.getSeconds();
+	}
