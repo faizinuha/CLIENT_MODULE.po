@@ -6,7 +6,7 @@ let score = 0;
 
 document.querySelector(".score").textContent = score;
 
-fetch("data/cards.json")
+fetch("asset/cards.json")
   .then((res) => res.json())
   .then((data) => {
     cards = [...data, ...data];
@@ -33,16 +33,15 @@ function generateCards() {
     cardElement.classList.add("card");
     cardElement.setAttribute("data-name", card.name);
     cardElement.innerHTML = `
-      <div class="front">
-        <img class="front-image" src=${card.image} />
-      </div>
-      <div class="back"></div>
-    `;
+    <div class="front">
+      <img class="front-image" src="${card.image}" /> <!-- Perhatikan tanda kutip di sekitar ${card.image} -->
+    </div>
+    <div class="back"></div>
+  `;
     gridContainer.appendChild(cardElement);
     cardElement.addEventListener("click", flipCard);
   }
 }
-
 function flipCard() {
   if (lockBoard) return;
   if (this === firstCard) return;
