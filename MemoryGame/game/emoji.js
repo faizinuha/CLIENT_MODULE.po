@@ -4,87 +4,48 @@ let level = 1;
 function startGame(level) {
   let tileCount;
   let additionalBlocks;
-  let additionalEmojis = []; // Menyimpan emoji tambahan untuk blok tambahan
+  let additionalEmojis = []; 
 
+  // Menentukan jumlah blok dan emoji tambahan berdasarkan level
   if (level === 1) {
     tileCount = 16;
-    additionalBlocks = 0; // Tidak ada blok tambahan di level 1
+    additionalBlocks = 0;
   } else if (level === 2) {
     tileCount = 18;
-    additionalBlocks = 2; // Dua blok tambahan di level 2
-    additionalEmojis = ["🍎", "🥦"]; // Emoji tambahan untuk level 2
+    additionalBlocks = 2;
+    additionalEmojis = ["🍎", "🥦"];
   } else if (level === 3) {
     tileCount = 20;
-    additionalBlocks = 4; // Empat blok tambahan di level 3
-    additionalEmojis = ["🍋", "🍊", "🍇", "💖"]; // Emoji tambahan untuk level 3
+    additionalBlocks = 4;
+    additionalEmojis = ["🍋", "🍊", "🍇", "💖"];
   } else if (level === 4) {
     tileCount = 25;
-    additionalBlocks = 9; // Sembilan blok tambahan di level 4
-    additionalEmojis = [
-      "🍎",
-      "🌑",
-      "🏖️",
-      "⚓",
-      "🍋",
-      "⚪",
-      "🍊",
-      "🥦",
-      "🍇"
-    ]; // Emoji tambahan untuk level 4
+    additionalBlocks = 9;
+    additionalEmojis = ["🍎", "🌑", "🏖️", "⚓", "🍋", "⚪", "🍊", "🥦", "🍇"];
   } else if (level === 5) {
     tileCount = 30;
-    additionalBlocks = 15; // Empat belas blok tambahan di level 5
-    additionalEmojis = [
-        "🔵",
-        "🟣",
-        "🟢",
-        "🟦",
-        "🧡",
-        "🔶",
-        "🟤",
-        "🟡",
-        "🟪",
-        "🟨",
-        "🌈",
-        "🟫",
-        "🐟",
-        "🦩"
-    ];
-} else if(level === 6){
+    additionalBlocks = 15;
+    additionalEmojis = ["🔵", "🟣", "🟢", "🟦", "🧡", "🔶", "🟤", "🟡", "🟪", "🟨", "🌈", "🟫", "🐟", "🦩"];
+  } else if (level === 6) {
     alert('Selamat! Anda menyelesaikan level 6!');
-    // Kembali ke halaman utama setelah menyelesaikan level 5
-    window.location.href = '../index.html'; // Ganti 'home.html' dengan URL halaman utama Anda
-    return; // Menghentikan eksekusi fungsi startGame setelah menyelesaikan level 5
-} else {
-  tileCount = 25;
-  additionalBlocks = 0; // Default to no additional blocks for levels beyond 4
-}
-    
-  const emojis = [
-    "😀",
-    "😂",
-    "😎",
-    "😍",
-    "🥳",
-    "😜",
-    "🤑",
-    "🤩",
-  ];
-  let emojisPicklist = [...emojis, ...emojis];
-
-  // Tambahkan emoji tambahan untuk blok tambahan
-  for (let i = 0; i < additionalEmojis.length; i++) {
-    emojisPicklist.push(additionalEmojis[i]);
+    window.location.href = '../index.html'; // Mengarahkan kembali ke halaman utama setelah menyelesaikan level 6
+    return;
+  } else {
+    tileCount = 25;
+    additionalBlocks = 0;
   }
+  
+  const emojis = ["😀", "😂", "😎", "😍", "🥳", "😜", "🤑", "🤩"];
+  let emojisPicklist = [...emojis, ...emojis, ...additionalEmojis];
 
   // Game state
   let revealedCount = 0;
   let activeTile = null;
   let awaitingEndOfMove = false;
 
+  // Fungsi untuk membangun tile
   function buildTile(emoji) {
     const element = document.createElement("div");
-
     element.classList.add("tile");
     element.setAttribute("data-emoji", emoji);
     element.setAttribute("data-revealed", "false");
@@ -96,12 +57,11 @@ function startGame(level) {
         return;
       }
 
-      // Reveal this emoji
+      // Reveal emoji
       element.textContent = emoji;
 
       if (!activeTile) {
         activeTile = element;
-
         return;
       }
 
@@ -150,15 +110,7 @@ function startGame(level) {
     emojisPicklist.splice(randomIndex, 1);
     tilesContainer.appendChild(tile);
   }
-
-  // Fungsi blok baru
-  function newBlockFunction() {
-    // Kode untuk fungsi blok baru
-  }
-
-  // Panggil fungsi blok baru
-  newBlockFunction();
 }
 
-// Mulai permainan dengan level 4
+// Mulai permainan dengan level 1
 startGame(level);
