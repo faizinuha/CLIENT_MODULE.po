@@ -1,6 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap");
 body {
-  background-image: url(as.jpg);
-  font-family: Arial, sans-serif;
+  background-image: url(img/as.jpg);
   background-color: #f0f0f0;
   display: flex;
   justify-content: center;
@@ -42,3 +42,44 @@ button:hover {
   background-color: #02327a;
 }
 
+.game-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.game-options {
+  width: 100%;
+  max-width: 300px;
+  margin-left: 20px;
+}
+
+.game-button {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+}
+
+.game-button button {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.gif-container {
+  flex: 1;
+  max-width: 50%;
+  padding-right: 50px;
+}
+
+.gif-container img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+.img-container {
+      text-align: center;
+      cursor: pointer;
+      border-radius: 100px;
+    }

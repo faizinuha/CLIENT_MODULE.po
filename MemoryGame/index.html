@@ -1,34 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Memory Game</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  <link rel="icon" href="../memory.png">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
-    <h1 class="mt-5">Welcome To Memory Game</h1>
-    <hr />
-    <select id="gameMode" class="form-select form-select-lg mb-3" aria-label="Large select example">
-      <option value="Buah">Buah</option>
-      <option value="Color">Colors</option>
-    </select>
-    <button onclick="startGame()" class="btn btn-primary">Start Game</button>
-    <span id="clock" class="ms-3">00:00:00</span>
-  </div>
-  <script src="index.js" defer></script>
-  <script>
-    function startGame() {
-      var mode = document.getElementById("gameMode").value;
-      if (mode === "Buah") {
-        window.location.href = "cardlo/index.html";
-      } else if (mode === "Color") {
-        window.location.href = "game/warna.html";
-      } 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Game</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" href="img/memory.png" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- AOS Library -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+    <style></style>
+  </head>
+  <body>
+    <div class="container" data-aos="fade-up" data-aos-delay="200">
+      <div class="game-container">
+        <div class="gif-container" data-aos="fade-right" data-aos-delay="100">
+          <div
+            id="imageContainer"
+            class="img-container"
+            onclick="toggleImage()"
+          >
+            <img
+              id="mainImage"
+              src="img/hu-tao-genshin.gif"
+              alt="Hu Tao Genshin GIF"
+              title="Jangan di pencet"
+            />
+
+          </div>
+        </div>
+        <div class="game-options" data-aos="fade-left" data-aos-delay="300">
+          <hr />
+          <div class="game-button">
+            <button onclick="startGame('Buah')" class="btn btn-primary">
+              Buah
+            </button>
+          </div>
+          <div class="game-button">
+            <button onclick="startGame('Colors')" class="btn btn-primary">
+              Colors
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="index.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      function startGame(mode) {
+        if (mode === "Buah") {
+          window.location.href = "cardlo/index.html";
+        } else if (mode === "Colors") {
+          window.location.href = "game/warna.html";
+        }
+      }
+
+      // Initialize AOS Library
+      AOS.init();
+      // showmessgae
+         var originalImageSrc = "img/hu-tao-genshin.gif";
+    var alternativeImageSrc = "img/Raiden.png";
+    var isOriginalImage = true;
+
+    function toggleImage() {
+      if (isOriginalImage) {
+        showMessage("Kenapa kamu Pencet? Kan dosa aku!!");
+        replaceImage(alternativeImageSrc, "Please kembali ke gambar asli");
+      } else {
+        switchImage();
+      }
+      isOriginalImage = !isOriginalImage;
     }
-  </script>
-</body>
+
+    function showMessage(message) {
+      alert(message);
+    }
+
+    function replaceImage(src, title) {
+      document.getElementById('mainImage').src = src;
+      document.getElementById('mainImage').title = title;
+    }
+
+    function switchImage() {
+      alert('Fiuh, akhirnya kembali!');
+      replaceImage(originalImageSrc, "Pencet Lagi Untuk Kembali!!");
+    }
+
+    </script>
+  </body>
 </html>
