@@ -17,10 +17,17 @@
       href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
       rel="stylesheet"
     />
-    <style></style>
   </head>
   <body>
-    <div class="container" data-aos="fade-up" data-aos-delay="200">
+  <div class="loading-overlay">
+    <div class="loading-spinner"></div>
+  </div>
+
+ 
+  <div class="container">
+
+    <div class="game-container">
+     <div class="container" data-aos="fade-up" data-aos-delay="200">
       <div class="game-container">
         <div class="gif-container" data-aos="fade-right" data-aos-delay="100">
           <div
@@ -51,6 +58,9 @@
         </div>
       </div>
     </div>
+    </div>
+  </div>
+   
     <script src="index.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
@@ -91,6 +101,13 @@
         alert("Fiuh, akhirnya kembali!");
         replaceImage(originalImageSrc, "Pencet Lagi Untuk Kembali!!");
       }
+       setTimeout(function() {
+      // Hide loading overlay by changing its opacity to 0
+      document.querySelector('.loading-overlay').style.opacity = '0';
+      // Show main content by changing its opacity to 1
+      document.querySelector('.container').style.opacity = '1';
+    }, 2000); // Set loading time to 2 seconds (2000 milliseconds)
+    
     </script>
   </body>
 </html>

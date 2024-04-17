@@ -46,7 +46,20 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 50px;
+  margin-top: 50px 10px;
+}
+
+.gif-container {
+  flex: 1;
+  max-width: 50%;
+  padding-right: 50px;
+}
+
+.gif-container img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 .game-options {
@@ -66,20 +79,55 @@ button:hover {
   margin-right: 10px;
 }
 
-.gif-container {
-  flex: 1;
-  max-width: 50%;
-  padding-right: 50px;
+@media (max-width: 768px) {
+  .gif-container {
+    position: relative;
+    top: 25px;
+    max-width: 80%;
+    padding-right: 0;
+    margin-left: 10px; /* Sesuaikan margin kiri untuk memberikan ruang di sebelah kiri gambar */
+  }
+
+  .game-options {
+    margin-left: 10px; /* Sesuaikan margin kiri untuk memberikan ruang di sebelah kiri tombol */
+    margin-top: 20px;
+  }
+}
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease; /* Transisi untuk efek muncul-menghilang */
 }
 
-.gif-container img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
+/* Main Content Container */
+.container {
+  opacity: 0; /* Default opacity: 0 */
+  transition: opacity 0.5s ease; /* Transisi untuk efek muncul-menghilang */
 }
-.img-container {
-      text-align: center;
-      cursor: pointer;
-      border-radius: 100px;
-    }
+
+/* Loading Spinner */
+.loading-spinner {
+  border: 5px solid black;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
