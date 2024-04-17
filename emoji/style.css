@@ -1,0 +1,22 @@
+.card {
+  width: 100px;
+  height: 100px;
+  background-color: #ccc; /* Warna abu-abu */
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.card.flip {
+  background-color: #fff; /* Warna putih setelah diklik */
+}
+
+.game-board {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

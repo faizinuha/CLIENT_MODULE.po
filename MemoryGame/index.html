@@ -10,27 +10,24 @@
 </head>
 <body>
   <div class="container">
-    <h1>Welcome To Memory Game</h1>
+    <h1 class="mt-5">Welcome To Memory Game</h1>
     <hr />
     <select id="gameMode" class="form-select form-select-lg mb-3" aria-label="Large select example">
-      <option value="emoji">Emoji</option>
-      <option value="color">Colors</option>
-      <option value="buah2">Buah</option>
+      <option value="Buah">Buah</option>
+      <option value="Color">Colors</option>
     </select>
-    <button onclick="startGame()">Start Game</button>
-    <span id="clock">00:00:00</span>
+    <button onclick="startGame()" class="btn btn-primary">Start Game</button>
+    <span id="clock" class="ms-3">00:00:00</span>
   </div>
   <script src="index.js" defer></script>
   <script>
     function startGame() {
       var mode = document.getElementById("gameMode").value;
-      if (mode === "emoji") {
-        window.location.href = "game/emoji.html";
-      } else if (mode === "color") {
-        window.location.href = "game/warna.html";
-      } else if (mode === "buah2") {
+      if (mode === "Buah") {
         window.location.href = "cardlo/index.html";
-      }
+      } else if (mode === "Color") {
+        window.location.href = "game/warna.html";
+      } 
     }
   </script>
 </body>
