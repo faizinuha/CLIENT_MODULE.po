@@ -19,15 +19,11 @@
     />
   </head>
   <body>
-  <div class="loading-overlay">
-    <div class="loading-spinner"></div>
-  </div>
+      <div id="loading-screen">
+        <div class="loading-animation"></div>
+    </div>
 
- 
-  <div class="container">
-
-    <div class="game-container">
-     <div class="container" data-aos="fade-up" data-aos-delay="200">
+    <div class="container" data-aos="fade-up" data-aos-delay="200">
       <div class="game-container">
         <div class="gif-container" data-aos="fade-right" data-aos-delay="100">
           <div
@@ -58,10 +54,7 @@
         </div>
       </div>
     </div>
-    </div>
-  </div>
-   
-    <script src="index.js" defer></script>
+    <script src="index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
       function startGame(mode) {
@@ -74,40 +67,17 @@
 
       // Initialize AOS Library
       AOS.init();
-      // showmessgae
-      var originalImageSrc = "img/hu-tao-genshin.gif";
-      var alternativeImageSrc = "img/Raiden.png";
-      var isOriginalImage = true;
-
-      function toggleImage() {
-        if (isOriginalImage) {
-          showMessage("Kenapa kamu Pencet? Kan dosa aku!!");
-          replaceImage(alternativeImageSrc, "Please kembali ke gambar asli");
-        } else {
-          switchImage();
-        }
-        isOriginalImage = !isOriginalImage;
-      }
-      function showMessage(message) {
-        alert(message);
-      }
-
-      function replaceImage(src, title) {
-        document.getElementById("mainImage").src = src;
-        document.getElementById("mainImage").title = title;
-      }
-
-      function switchImage() {
-        alert("Fiuh, akhirnya kembali!");
-        replaceImage(originalImageSrc, "Pencet Lagi Untuk Kembali!!");
-      }
-       setTimeout(function() {
-      // Hide loading overlay by changing its opacity to 0
-      document.querySelector('.loading-overlay').style.opacity = '0';
-      // Show main content by changing its opacity to 1
-      document.querySelector('.container').style.opacity = '1';
-    }, 2000); // Set loading time to 2 seconds (2000 milliseconds)
-    
     </script>
+    <script>
+  // Show/hide loading overlay and main content
+    setTimeout(function() {
+            var loadingScreen = document.getElementById('loading-screen');
+            loadingScreen.classList.add('fade-out');
+            setTimeout(function() {
+                loadingScreen.style.display = 'none'; 
+            }, 1000);
+        }, 4000);
+</script>
+
   </body>
 </html>
