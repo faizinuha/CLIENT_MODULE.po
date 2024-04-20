@@ -1,12 +1,14 @@
 var originalImageSrc = "img/hu-tao-genshin.gif";
-var alternativeImageSrc = "img/Raiden.png";
+var alternativeImageSrc = "img/chili.png";
 
 var isOriginalImage = true;
 
 function toggleImage() {
   if (isOriginalImage) {
-    showMessage("Kenapa kamu Pencet? Kan dosa aku!!Nooooo");
-    replaceImage(alternativeImageSrc);
+    showMessage("Kenapa kamu Pencet?");
+    showMessage("kan dosa aku ");
+    showMessage("Ups Tidak ada apa2");
+    replaceImage(alternativeImageSrc, "please kembali....");
   } else {
     switchImage();
   }
