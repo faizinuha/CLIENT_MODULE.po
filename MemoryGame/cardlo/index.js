@@ -4,6 +4,7 @@ let firstCard, secondCard;
 let lockBoard = false;
 let score = 0;
 let level = 1;
+let nextlevel = true;
 
 document.querySelector(".score").textContent = score;
 
@@ -15,7 +16,6 @@ function startGame(level) {
       shuffleCards();
       generateCards();
     });
-  console.log(cards);
 }
 
 function shuffleCards() {
