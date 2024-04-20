@@ -1,5 +1,11 @@
 [
-{
-  
-}
+    {
+        "image": "image/cherries.png",
+        "name": "cherries"
+    },
+    {
+        "image": "image/orange.png",
+        "name": "orange"
+    }
+    
 ]

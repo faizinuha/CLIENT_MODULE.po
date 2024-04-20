@@ -1,11 +1,12 @@
 var originalImageSrc = "img/hu-tao-genshin.gif";
 var alternativeImageSrc = "img/Raiden.png";
+
 var isOriginalImage = true;
 
 function toggleImage() {
   if (isOriginalImage) {
-    showMessage("Kenapa kamu Pencet? Kan dosa aku!!");
-    replaceImage(alternativeImageSrc, "Please kembali ke gambar asli");
+    showMessage("Kenapa kamu Pencet? Kan dosa aku!!Nooooo");
+    replaceImage(alternativeImageSrc);
   } else {
     switchImage();
   }
