@@ -15,6 +15,7 @@ function startGame(level) {
       shuffleCards();
       generateCards();
     });
+  console.log(cards);
 }
 
 function shuffleCards() {

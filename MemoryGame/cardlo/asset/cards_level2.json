@@ -22,5 +22,17 @@
     {
         "image": "image/strawberry.png",
         "name": "strawberry"
+    },
+    {
+        "image": "image/tomato.png",
+        "name": "tomato"
+    },
+    {
+        "image": "image/watermelon.png",
+        "name": "watermelon"
+    },
+    {
+        "image": "image/cherries.png",
+        "name": "cherries"
     }
 ]
