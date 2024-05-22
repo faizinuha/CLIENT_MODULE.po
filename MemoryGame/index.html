@@ -36,6 +36,9 @@
             Colors
           </button>
         </div>
+        <div class="game-button">
+          <button class="btn btn-primary" onclick="startGame('hexaria')">Hexaria</button>
+        </div>
       </div>
     </div>
   </div>
@@ -47,6 +50,9 @@
         window.location.href = "cardlo/index.html";
       } else if (mode === "Colors") {
         window.location.href = "game/warna.html";
+      }else if(mode === "hexaria"){
+        alert('masih beta test')
+        window.location.href = "../Hexaria/index.html";
       }
     }
 
@@ -61,7 +67,7 @@
       setTimeout(function () {
         loadingScreen.style.display = 'none';
       }, 1000);
-    }, 4000);
+    }, 3000);
   </script>
 
 </body>

@@ -1,5 +1,5 @@
 var originalImageSrc = "img/hu-tao-genshin.gif";
-var alternativeImageSrc = "img/chili.png";
+var alternativeImageSrc = "img/Raiden.png";
 
 var isOriginalImage = true;
 
