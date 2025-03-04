@@ -6,7 +6,16 @@ body {
     padding: 20px;
     background-color: #f8f9fa;
 }
+.loading-message {
+    z-index: 9999;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    animation: fadeIn 0.3s ease-in;
+}
 
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
 .container {
     display: flex;
     flex-direction: column;
@@ -88,18 +97,38 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 20px;
+    background-color: #f0f0f0; /* Light background for contrast */
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px; /* Padding around the board */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
 .hexagon {
     width: 60px;
     height: 34.64px;
-    background-color: #ccc;
+    background-color: #8e44ad; /* Purple color for hexagons */
     position: relative;
     margin: 5px;
     transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
     cursor: pointer;
+    border-radius: 5px; /* Slight rounding for hexagons */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Shadow for hexagons */
 }
 
+.hexagon:hover {
+    transform: scale(1.1);
+    background-color: #9b59b6; /* Lighter purple on hover */
+}
+
+/* Current Hexagon */
+.current-hexagon .hexagon {
+    width: 100px;
+    height: 57.74px;
+    background-color: #8e44ad;
+    margin-top: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
 .hexagon:hover {
     transform: scale(1.1);
 }
